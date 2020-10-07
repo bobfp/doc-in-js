@@ -1,0 +1,27 @@
+{
+  "name": "doc-in-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "bob <bcoop713@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest",
+    "build": "babel -D __tests__"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/generator": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.5.0",
+    "babel-plugin-macros": "^2.8.0",
+    "babel-plugin-tester": "^10.0.0",
+    "jest": "^26.5.0"
+  }
+}
