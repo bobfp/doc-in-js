@@ -7,7 +7,8 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "build": "babel -D __tests__"
+    "build": "babel -D __tests__",
+		"serve": "markserv ./"
   },
   "jest": {
     "transform": {
@@ -22,6 +23,8 @@
     "babel-jest": "^26.5.0",
     "babel-plugin-macros": "^2.8.0",
     "babel-plugin-tester": "^10.0.0",
-    "jest": "^26.5.0"
+    "jest": "^26.5.0",
+    "js-yaml": "^3.14.0",
+    "markserv": "^1.17.4"
   }
 }

@@ -1,4 +1,10 @@
-import doc from "../lib/doc.macro";
+import doc from "../../lib/doc.macro";
+
+doc({ name: "index" })`
+# User Module
+=====
+This module is to store user functions
+`;
 
 doc({ a: "cat", b: "dog" })`
 # Add
