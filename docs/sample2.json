@@ -1,0 +1,1 @@
+[{"content":"\n# Add\n=====\n\nAdds two numbers together\n","name":"add","data":{"a":"cat","b":"dog"},"srcPath":"__tests__/sample2.js"},{"content":"\n# Add1\n=====\n\nAdds one to a number\n","name":"add1","data":null,"srcPath":"__tests__/sample2.js"}]

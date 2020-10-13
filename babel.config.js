@@ -1,10 +1,7 @@
 module.exports = {
   presets: [
     [
-      "@babel/preset-env",
-      {
-        targets: { chrome: "58" },
-      },
+			"next/babel",
     ],
   ],
   plugins: ["babel-plugin-macros"],
