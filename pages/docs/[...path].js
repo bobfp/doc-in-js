@@ -3,6 +3,8 @@ import dirTree from "directory-tree";
 import fs from "fs";
 import nodePath from "path";
 import ReactMarkdown from "react-markdown";
+import SideBar from "../../components/SideBar";
+import { Box } from "rebass";
 
 const flattenPaths = (paths = []) => {
   return paths.reduce((final, path) => {
@@ -11,6 +13,7 @@ const flattenPaths = (paths = []) => {
 };
 
 export async function getStaticProps({ params }) {
+  const docTree = dirTree("./docs").children;
   const jsonFile = nodePath.join(
     process.cwd(),
     "docs/" + params.path.join("/") + ".json"
@@ -25,7 +28,7 @@ export async function getStaticProps({ params }) {
     );
   }
   return {
-    props: { docObjects: JSON.parse(docObjects) }, // will be passed to the page component as props
+    props: { docObjects: JSON.parse(docObjects), docTree }, // will be passed to the page component as props
   };
 }
 
@@ -42,12 +45,18 @@ export async function getStaticPaths() {
   };
 }
 
-const Post = ({ docObjects }) => {
+const Post = ({ docObjects, docTree }) => {
   const router = useRouter();
-
-  return docObjects.map((docObject, i) => {
-    return <ReactMarkdown key={i} source={docObject.content} />;
-  });
+  return (
+    <Box sx={{ width: "100vw", height: "100vh", display: "flex" }}>
+      <SideBar docTree={docTree} />
+      <Box sx={{ flexGrow: 1 }}>
+        {docObjects.map((docObject, i) => {
+          return <ReactMarkdown key={i} source={docObject.content} />;
+        })}
+      </Box>
+    </Box>
+  );
 };
 
 export default Post;

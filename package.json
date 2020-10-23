@@ -34,8 +34,10 @@
   "dependencies": {
     "directory-tree": "^2.2.5",
     "next": "^9.5.5",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1"
+    "react-markdown": "^4.3.1",
+    "rebass": "^4.0.7"
   }
 }
